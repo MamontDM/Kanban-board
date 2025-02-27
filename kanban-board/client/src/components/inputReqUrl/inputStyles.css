@@ -1,0 +1,16 @@
+.input-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.input-area{
+    flex: 1;
+    padding-left: 15px;
+}
+
+.input-load-button{
+    width: 15%;
+    font-size: 1.2rem;
+    font-style: italic;
+    background-color: aqua;
+}
