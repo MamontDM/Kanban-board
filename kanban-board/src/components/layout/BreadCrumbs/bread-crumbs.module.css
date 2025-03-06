@@ -1,0 +1,18 @@
+.breadcrumbs-container{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+}
+.breadcrumbs-item{
+    cursor: pointer;
+    text-shadow: 1px 3px 5px black;
+}
+.arrow {
+    width: 20px;
+    height: 20px;
+}
+.star-icon{
+    width: 20px;
+    height: 20px;
+}

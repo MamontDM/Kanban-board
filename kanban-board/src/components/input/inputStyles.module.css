@@ -1,0 +1,22 @@
+.input-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.input-area{
+    flex: 1;
+    padding-left: 15px;
+    border-radius: 8px;
+}
+
+.input-area:active{
+    text-rendering: none;
+}
+
+.input-load-button{
+    width: 15%;
+    font-size: 1.2rem;
+    font-style: italic;
+    background-color: rgb(191, 196, 196);
+    border-radius: 5px;
+}

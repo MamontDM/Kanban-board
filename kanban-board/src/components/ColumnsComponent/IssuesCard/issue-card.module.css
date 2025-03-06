@@ -1,0 +1,37 @@
+.issue-content-card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 3px double black;
+    padding: 12px;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 1rem;
+    color: rgb(83, 79, 79);
+    background-color: white;
+    border-radius: 12px;
+    margin: 8px 0;
+    gap: 6px;
+    cursor: grab;
+}
+
+.issue-title{
+    font-weight: 700;
+    color: black;
+    font-size: 1.1rem;
+}
+
+.issue-info{
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+.issue-metadata{
+    display: flex;
+    font-weight: 700;
+    width: 60%;
+    gap: 5px;
+    font-size: 0.85rem;
+}
