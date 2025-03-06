@@ -10,3 +10,11 @@ export const baseMockStore = {
   moveIssue: vi.fn(),
   loadIssuesFromDB: vi.fn(),
 };
+
+
+export const repoMockStore = {
+  repos:[],
+  activeRepoKey: null,
+  loadRepos: vi.fn(),
+  setActiveRepo: vi.fn(),
+}

@@ -2,9 +2,8 @@
   import { IssueApi } from "../../types/models";
  
  const processIssues = (issues : IssueApi[] | null) => {
-    console.log(issues);
-    
- if (!Array.isArray(issues)) {
+
+  if (!Array.isArray(issues)) {
   console.warn("processIssues received null or invalid issues, returning empty arrays.");
   return {
     todo: [],

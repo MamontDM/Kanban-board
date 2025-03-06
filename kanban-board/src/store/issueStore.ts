@@ -35,11 +35,6 @@ export const useIssueStore = create<IssueStoreState>((set, get) => ({
     }
   },
 
-  // getAllIssues : () => {
-  //   const { todo, inProgress, done } = get();
-  //   return [...todo, ...inProgress, ...done];
-  // },
-
   moveIssue: (
     id: number, 
     currentState: IssueState, 
@@ -100,8 +95,6 @@ export const useIssueStore = create<IssueStoreState>((set, get) => ({
     targetIssueArr.sort((a, b) => a.order - b.order);
     targetIssueArr.forEach((item, index) => (item.order = index + 1));
 
-    console.log(targetIssueArr);
-  
 
       return {
           ...state,

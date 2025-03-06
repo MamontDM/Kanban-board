@@ -63,7 +63,7 @@ describe("UrlInput component", () => {
           });
       });
 
-      it("Показывает alert при невалидном URL", async () => {
+      it("if Url is not valid popup alert", async () => {
         window.alert = vi.fn();
         render(<UrlInput />);
         const input = screen.getByPlaceholderText("Enter repository URL");

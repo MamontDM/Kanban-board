@@ -62,7 +62,6 @@ const Columns = () => {
         });
     }} 
        onDragEnd={() => {
-        console.log("called o=in componnets")
         if (!overTask || !activeTask) return;
                 moveIssue(
                     activeTask.id, 

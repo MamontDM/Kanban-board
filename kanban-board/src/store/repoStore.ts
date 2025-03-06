@@ -8,7 +8,7 @@ export const useRepoStore = create<RepoStoreState>((set, get) => ({
 
     loadRepos: async ( repoKey = null) => {
         const reposFromDB = await getTrackedRepo();
-        console.log("Repos from DB:", reposFromDB);
+
         const repos = reposFromDB.map(repo => ({ id: repo })); 
         set({ repos });
 

@@ -64,7 +64,6 @@ export const openDB =  (): Promise<IDBDatabase>  =>  {
           const request = store.get(repoKey);
             request.onsuccess = () => {
               if(request.result ) {
-                console.log(`Loaded issues for repo ${repoKey} from IndexedDB:`, request.result);
                 resolve(request.result);
               }else {
                 console.log(`No issues found for repo ${repoKey}.`);
