@@ -41,7 +41,7 @@ return (
                     className={styles["input-load-button"]}
                     onClick={ handleFetch}
             >
-                Load issues
+                <strong>Load</strong> 
             </button>
         </div>
     </>
