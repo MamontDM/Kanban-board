@@ -13,7 +13,7 @@ describe("UrlInput component", () => {
     it("Render inputArea and button", () => {
         render(<UrlInput />);
         expect(screen.getByPlaceholderText("Enter repository URL")).toBeInTheDocument();
-        expect(screen.getByText("Load issues")).toBeInTheDocument();
+        expect(screen.getByText("Load")).toBeInTheDocument();
     });
 
     it("Change value", async () => {
@@ -44,7 +44,7 @@ describe("UrlInput component", () => {
         window.alert = vi.fn();
         render(<UrlInput />);
     
-        const button = screen.getByText("Load issues");
+        const button = screen.getByText("Load");
         await userEvent.click(button);
     
         expect(window.alert).toHaveBeenCalledWith("Please enter a valid GitHub repository URL!");
@@ -53,7 +53,7 @@ describe("UrlInput component", () => {
       it("Correct call `useSourceDataManager` if Url is valid", async () => {
         render(<UrlInput />);
         const input = screen.getByPlaceholderText("Enter repository URL");
-        const button = screen.getByText("Load issues");
+        const button = screen.getByText("Load");
         await userEvent.type(input, "https://github.com/user/repo");
         await userEvent.click(button);
         
@@ -67,7 +67,7 @@ describe("UrlInput component", () => {
         window.alert = vi.fn();
         render(<UrlInput />);
         const input = screen.getByPlaceholderText("Enter repository URL");
-        const button = screen.getByText("Load issues");
+        const button = screen.getByText("Load");
     
         await userEvent.type(input, "invalid-url");
         await userEvent.click(button);
