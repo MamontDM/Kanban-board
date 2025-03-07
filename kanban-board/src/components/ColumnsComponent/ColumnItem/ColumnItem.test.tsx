@@ -46,8 +46,8 @@ describe("Column component", () => {
         expect(screen.getByText(/Task list is empty/i)).toBeInTheDocument();
     });
 
-    it("Render `placeholder` if overTask is present", () => {
+    it("Render `drop here` if overTask is present", () => {
         render(<Column type="todo" overTask={mockOverTask} activeTask={null} />);
-        expect(screen.getByText("➕ Placeholder")).toBeInTheDocument();
+        expect(screen.getByText("Drop Here")).toBeInTheDocument();
       });
 });
