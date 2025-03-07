@@ -45,12 +45,31 @@
 
 }
 .placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 350px;
-  background-color: rgba(127, 255, 212, 0.397);
-  border: 1px solid wheat;
-  height: 120px;
-    opacity: 0.8;
-    transition: height 0.2s ease-in-out;
+  opacity: 0;
+  height: 130px;
+  transform: scaleY(0);
+  overflow: hidden;
+  background-color: rgba(141, 209, 203, 0.308);
+  animation: placeholderExpand 0.2s ease-out forwards;
+  border-radius: 10px;
+
+}
+
+@keyframes placeholderExpand {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: scaleY(0);
+  }
+  to{
+    opacity: 1;
+    max-height: 130px;
+    transform: scaleY(1);
+  }
 }
 
 .hiddenTrigger {
@@ -69,6 +88,8 @@
   border-radius: 8px;
   pointer-events: none; 
 }
+
+
 
 .hiddenTrigger:last-child {
   margin-top: auto;

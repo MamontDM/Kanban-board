@@ -15,19 +15,22 @@ const Column: React.FC<ColumnProps> = ({ type, overTask, activeTask }) => {
   });
 
   return (
-    <div ref={setNodeRef} data-testid={`column-${type}`}  className={styles["column-item"]}>
+    <div ref={setNodeRef} 
+         data-testid={`column-${type}`}  
+         className={styles["column-item"]}
+         >
         <SortableContext id={type} items={issues.map((issue) => issue.id)}>
         {issues.length === 0 && <div className={styles["empty-placeholder"]}>Task list is empty, please load issues</div>}
           {issues.map((issue) => (
             <React.Fragment key={issue.id}>
-                {overTask?.id === issue.id && overTask?.positionBefore && (<div className={styles["placeholder"]}>➕ Placeholder</div>)}
+                {overTask?.id === issue.id && overTask?.positionBefore && (<div className={styles["placeholder"]}>Drop Here</div>)}
 
                 {activeTask?.id !== issue.id && <IssueCard issue={issue} />}
 
-                {overTask?.id === issue.id && !overTask.positionBefore && (<div className={styles["placeholder"]}>➕ Placeholder</div>)}
+                {overTask?.id === issue.id && !overTask.positionBefore && (<div className={styles["placeholder"]}>Drop Here</div>)}
             </React.Fragment>
         ))}
-        {overTask?.positionEnd && overTask?.columnId === type && <div className={styles["placeholder"]}>➕ Placeholder</div>}
+        {overTask?.positionEnd && overTask?.columnId === type && <div className={styles["placeholder"]}>Drop Here</div>}
         </SortableContext>
     </div>
 )}
