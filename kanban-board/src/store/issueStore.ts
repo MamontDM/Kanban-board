@@ -55,13 +55,14 @@ export const useIssueStore = create<IssueStoreState>((set, get) => ({
       console.error(`Task with id ${id} not found!`);
       return state;
     }
+
+    if(currentState === newState && !overTaskId && !positionEnd){
+      console.log("Task dropped in the same position, no update needed.");
+            return state;
+    }
+
   const [task] = originIssueArr.splice(taskIndex, 1);
   task.state = newState; 
-
-  if(currentState === newState && !overTaskId && !positionEnd){
-    console.log("Task dropped in the same position, no update needed.");
-          return state;
-  }
 
   let newOrder: number;
 

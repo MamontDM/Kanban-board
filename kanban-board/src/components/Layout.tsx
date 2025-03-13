@@ -1,7 +1,7 @@
 import React from 'react'
 import Columns from "./ColumnsComponent/Columns";
 import RepoList from "./layout/TrackedRepoList/repoList";
-import UrlInput from "./input/Input";
+import UrlInput from "./Input/Input";
 import BreadCrumbs from "./layout/BreadCrumbs/BreadCrumbs";
 import styles from "./layoutStyles.module.css";
 

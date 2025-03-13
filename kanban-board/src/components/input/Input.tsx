@@ -1,28 +1,20 @@
 import React, { useState } from "react";
 import { useSourceDataManager } from "../../utils/ApiDataRequest/externalApiRequest";
+import { inputValidator } from "../../utils/Helprers/inputvalidator";
 import styles from "./inputStyles.module.css";
 
 const UrlInput = React.memo(() => {
     const [placeholder, setPlaceholder] = useState("Enter repository URL")
     const [inputValue, setInputValue] = useState<string>("");
-    const extractInfoFromInput = (url: string) : {ownerName: string; repository: string} | null => {
-        const regularExp = /^https:\/\/github\.com\/([^\/]+)\/([^\/]+)\/?$/;
-        const match = url.match(regularExp);
-        if(match) {
-            return {ownerName: match[1], repository: match[2] };
-        }
-        return null;
-    };
+
+
+
     const handleFetch = async () => {
-        if(!inputValue.trim()){
+        const repoData = inputValidator(inputValue);
+        if (!repoData) {
             alert("Please enter a valid GitHub repository URL!");
-            return;
+        return;
         }
-    const repoData = extractInfoFromInput(inputValue);
-    if (!repoData) {
-      alert("Please enter a valid GitHub repository URL!");
-      return;
-    }
     useSourceDataManager(repoData);
 }
 
